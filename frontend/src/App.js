@@ -132,11 +132,12 @@ return (
     <option value="client">Clients</option>
     <option value="inactif">Inactifs</option>
   </select>
-  <ClientList 
-    clients={clientsFiltres} 
-    onChangerStatut={changerStatut} 
-    onSupprimer={supprimerClient} 
-  /> 
+  <ClientList
+    clients={clientsFiltres}
+    onChangerStatut={changerStatut}
+    onSupprimer={supprimerClient}
+    onModifierNom={modifierNom}
+/>
   
 </div> 
 ); 

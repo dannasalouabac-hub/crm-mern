@@ -109,12 +109,6 @@ function ClientList({
                         </td>
                     </tr>
                 ))}
-                <ClientList
-                    clients={clientsFiltres}
-                    onChangerStatut={changerStatut}
-                    onSupprimer={supprimerClient}
-                    onModifierNom={modifierNom}
-                />
             </tbody>
         </table>
     );
