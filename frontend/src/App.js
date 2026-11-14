@@ -1,17 +1,12 @@
-import './App.css';
+import CarteClient from "./components/CarteClient";
 
-function App() {
-  const clients = [ 
-    { id: 1, nom: "Sara Amrani" }, 
-    { id: 2, nom: "Yassine Bennani" }, 
-    { id: 3, nom: "Lina Fassi" } 
-  ];
-  return (
-   <ul> {clients.map((client) => ( 
-   <li key={client.id}>{client.nom}</li> 
-  ))} 
-  </ul>
-  );
-}
-
+function App() { 
+  return ( 
+  <div> 
+    <h1>Mes clients</h1> 
+    <CarteClient nom="Sara Amrani" entreprise="Atlas Digital" /> 
+    <CarteClient nom="Yassine Bennani" entreprise="Bennani Conseil" />
+    </div> 
+    ); 
+} 
 export default App;
