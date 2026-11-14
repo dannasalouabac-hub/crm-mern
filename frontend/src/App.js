@@ -1,13 +1,15 @@
-import { useState } from "react"; 
+import { useState } from "react";
+
 function App() { 
-  const [compteur, setCompteur] = useState(0); 
+  const [nom, setNom] = useState(""); 
   return ( 
   <div> 
-    <h1>Clients appelés : {compteur}</h1> 
-    <button onClick={() => setCompteur(compteur + 1)}> 
-      +1 appel 
-    </button> 
-  </div> 
+    <input 
+    placeholder="Tape un nom" 
+    value={nom} onChange={(event) => setNom(event.target.value)} 
+    /> 
+    <p>Tu as écrit : {nom}</p> 
+    </div> 
   ); 
-} 
+}
 export default App;
