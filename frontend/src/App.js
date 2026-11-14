@@ -57,6 +57,21 @@ function App() {
       setMessage(error.message);    
     }  
   }
+  async function modifierNom(id, nom) {
+    try {
+        const clientModifie = await updateClient(id, { nom });
+
+        setClients(
+            clients.map((c) =>
+                c._id === id ? clientModifie : c
+            )
+        );
+
+        setMessage("Nom modifié !");
+    } catch (error) {
+        setMessage(error.message);
+    }
+}
  const clientsFiltres = clients.filter((c) => {
     const correspondRecherche =
         (c.nom + " " + c.email)
