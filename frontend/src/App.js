@@ -68,9 +68,38 @@ function App() {
 
     return correspondRecherche && correspondStatut;
 });
+const nombreProspects = clients.filter(
+    (c) => c.statut === "prospect"
+).length;
+
+const nombreClients = clients.filter(
+    (c) => c.statut === "client"
+).length;
+
+const nombreInactifs = clients.filter(
+    (c) => c.statut === "inactif"
+).length;
 return ( 
 <div className="container"> 
   <Header total={clients.length} /> 
+  <div className="statistiques">
+
+    <div className="stat-card">
+        <h3>Prospects</h3>
+        <p>{nombreProspects}</p>
+    </div>
+
+    <div className="stat-card">
+        <h3>Clients</h3>
+        <p>{nombreClients}</p>
+    </div>
+
+    <div className="stat-card">
+        <h3>Inactifs</h3>
+        <p>{nombreInactifs}</p>
+    </div>
+
+</div>
   <ClientForm onAjouter={ajouterClient} /> 
   {message && <p className="message">{message}</p>} 
   <input 
