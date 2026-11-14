@@ -4,15 +4,16 @@ function ClientForm({ onAjouter }) {
     const [nom, setNom] = useState(""); 
     const [email, setEmail] = useState(""); 
     const [entreprise, setEntreprise] = useState("");
-
+    const [telephone, setTelephone] = useState("");
     async function handleSubmit(event) {
         event.preventDefault();
-        const reussi = await onAjouter({ nom, email, entreprise });
+        const reussi = await onAjouter({nom,email,entreprise,telephone});
 
         if (reussi) { 
             setNom(""); 
             setEmail(""); 
             setEntreprise(""); 
+            setTelephone("");
         } 
     }
     return ( 
@@ -35,6 +36,12 @@ function ClientForm({ onAjouter }) {
             value={entreprise}        
             onChange={(event) => setEntreprise(event.target.value)}      
             />
+            <input
+            type="tel"
+            placeholder="Téléphone"
+            value={telephone}
+            onChange={(event) => setTelephone(event.target.value)}
+/>
              <button type="submit">Ajouter</button>
         </form>
     ); 

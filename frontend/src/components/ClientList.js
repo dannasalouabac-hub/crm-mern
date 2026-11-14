@@ -10,7 +10,8 @@ function ClientList({ clients, onChangerStatut, onSupprimer }) {
                     <th>Nom</th>          
                     <th>Email</th>          
                     <th>Entreprise</th>          
-                    <th>Statut</th>          
+                    <th>Statut</th>
+                    <th>Téléphone</th>
                     <th></th>        
                 </tr>      
             </thead>      
@@ -20,6 +21,7 @@ function ClientList({ clients, onChangerStatut, onSupprimer }) {
                     <td>{client.nom}</td>            
                     <td>{client.email}</td>            
                     <td>{client.entreprise}</td>            
+                    <td>{client.telephone}</td>
                     <td>
                         <select                
                             value={client.statut}                
