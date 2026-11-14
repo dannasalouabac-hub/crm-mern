@@ -1,12 +1,13 @@
-import CarteClient from "./components/CarteClient";
-
+import { useState } from "react"; 
 function App() { 
+  const [compteur, setCompteur] = useState(0); 
   return ( 
   <div> 
-    <h1>Mes clients</h1> 
-    <CarteClient nom="Sara Amrani" entreprise="Atlas Digital" /> 
-    <CarteClient nom="Yassine Bennani" entreprise="Bennani Conseil" />
-    </div> 
-    ); 
+    <h1>Clients appelés : {compteur}</h1> 
+    <button onClick={() => setCompteur(compteur + 1)}> 
+      +1 appel 
+    </button> 
+  </div> 
+  ); 
 } 
 export default App;
