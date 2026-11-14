@@ -78,7 +78,7 @@ function ClientList({
                             </select>
                         </td>
 
-                        <td>
+                        <td className="actions-buttons">
                             {idModification === client._id ? (
                                 <>
                                     <button onClick={() =>
