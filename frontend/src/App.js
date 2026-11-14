@@ -78,12 +78,7 @@ return (
     placeholder="Rechercher par nom ou email..." 
     value={recherche} 
     onChange={(event) => setRecherche(event.target.value)} 
-  /> 
-  <ClientList 
-    clients={clientsFiltres} 
-    onChangerStatut={changerStatut} 
-    onSupprimer={supprimerClient} 
-  /> 
+  />
   <select
     value={filtreStatut}
     onChange={(event) => setFiltreStatut(event.target.value)}
@@ -93,6 +88,12 @@ return (
     <option value="client">Clients</option>
     <option value="inactif">Inactifs</option>
   </select>
+  <ClientList 
+    clients={clientsFiltres} 
+    onChangerStatut={changerStatut} 
+    onSupprimer={supprimerClient} 
+  /> 
+  
 </div> 
 ); 
 } 
