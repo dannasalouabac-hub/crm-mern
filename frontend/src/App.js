@@ -1,14 +1,16 @@
 import './App.css';
 
 function App() {
-  const prenom = "Sara"; 
-  const nombreClients = 3;
+  const clients = [ 
+    { id: 1, nom: "Sara Amrani" }, 
+    { id: 2, nom: "Yassine Bennani" }, 
+    { id: 3, nom: "Lina Fassi" } 
+  ];
   return (
-    <div> 
-       <h1>Bonjour {prenom} !</h1> 
-       <p>Tu as {nombreClients} clients.</p> 
-       <p>Le double : {nombreClients * 2}</p>
-    </div>
+   <ul> {clients.map((client) => ( 
+   <li key={client.id}>{client.nom}</li> 
+  ))} 
+  </ul>
   );
 }
 
