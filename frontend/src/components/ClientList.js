@@ -9,9 +9,10 @@ function ClientList({ clients, onChangerStatut, onSupprimer }) {
                 <tr>          
                     <th>Nom</th>          
                     <th>Email</th>          
-                    <th>Entreprise</th>          
+                    <th>Entreprise</th>
+                    <th>Téléphone</th>          
                     <th>Statut</th>
-                    <th>Téléphone</th>
+                    
                     <th></th>        
                 </tr>      
             </thead>      
