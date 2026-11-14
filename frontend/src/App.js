@@ -14,7 +14,7 @@ function App() {
   const [clients, setClients] = useState([]);  
   const [recherche, setRecherche] = useState("");  
   const [message, setMessage] = useState("Chargement...");
-
+  const [filtreStatut, setFiltreStatut] = useState("tous");
   useEffect(() => {
       getClients()      
         .then((data) => {        
@@ -57,9 +57,26 @@ function App() {
       setMessage(error.message);    
     }  
   }
-  const clientsFiltres = clients.filter((c) =>    
-    (c.nom + " " + c.email).toLowerCase().includes(recherche.toLowerCase())  
-);
+ const clientsFiltres = clients.filter((c) => {
+    const correspondRecherche =
+        (c.nom + " " + c.email)
+        .toLowerCase()
+        .includes(recherche.toLowerCase());
+
+    const correspondStatut =
+        filtreStatut === "tous" || c.statut === filtreStatut;
+
+    return correspondRecherche && correspondStatut;
+});
+  <select
+    value={filtreStatut}
+    onChange={(event) => setFiltreStatut(event.target.value)}
+>
+    <option value="tous">Tous les clients</option>
+    <option value="prospect">Prospects</option>
+    <option value="client">Clients</option>
+    <option value="inactif">Inactifs</option>
+</select>
 return ( 
 <div className="container"> 
   <Header total={clients.length} /> 
