@@ -68,15 +68,6 @@ function App() {
 
     return correspondRecherche && correspondStatut;
 });
-  <select
-    value={filtreStatut}
-    onChange={(event) => setFiltreStatut(event.target.value)}
->
-    <option value="tous">Tous les clients</option>
-    <option value="prospect">Prospects</option>
-    <option value="client">Clients</option>
-    <option value="inactif">Inactifs</option>
-</select>
 return ( 
 <div className="container"> 
   <Header total={clients.length} /> 
@@ -93,6 +84,15 @@ return (
     onChangerStatut={changerStatut} 
     onSupprimer={supprimerClient} 
   /> 
+  <select
+    value={filtreStatut}
+    onChange={(event) => setFiltreStatut(event.target.value)}
+  >
+    <option value="tous">Tous les clients</option>
+    <option value="prospect">Prospects</option>
+    <option value="client">Clients</option>
+    <option value="inactif">Inactifs</option>
+  </select>
 </div> 
 ); 
 } 
